@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTP-p0-PI3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favourite-->
+        <scene sceneID="cDA-Ld-P8y">
+            <objects>
+                <viewController id="Ctr-cT-duu" customClass="FavouriteCountriesViewController" customModule="GMapWithMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJO-SL-YhK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a favourite country to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nj-r6-J1x">
+                                <rect key="frame" x="85.5" y="418" width="243" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.058823529409999999" green="0.37254901959999998" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rbx-er-67P">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" rowHeight="67" id="xqL-E1-8px">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xqL-E1-8px" id="C3w-V4-pFR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ctr-cT-duu" id="9N5-T1-RNy"/>
+                                    <outlet property="delegate" destination="Ctr-cT-duu" id="MN1-vs-xd7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="g9k-Zg-EaN" firstAttribute="bottom" secondItem="rbx-er-67P" secondAttribute="bottom" id="Co2-4p-9jB"/>
+                            <constraint firstItem="rbx-er-67P" firstAttribute="top" secondItem="g9k-Zg-EaN" secondAttribute="top" id="Kpi-sH-HvY"/>
+                            <constraint firstItem="9nj-r6-J1x" firstAttribute="centerX" secondItem="g9k-Zg-EaN" secondAttribute="centerX" id="TCH-T3-a9X"/>
+                            <constraint firstItem="g9k-Zg-EaN" firstAttribute="trailing" secondItem="rbx-er-67P" secondAttribute="trailing" id="l48-fE-1yp"/>
+                            <constraint firstItem="9nj-r6-J1x" firstAttribute="centerY" secondItem="g9k-Zg-EaN" secondAttribute="centerY" id="pGM-h0-rM0"/>
+                            <constraint firstItem="rbx-er-67P" firstAttribute="leading" secondItem="g9k-Zg-EaN" secondAttribute="leading" id="qXJ-ik-JHU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g9k-Zg-EaN"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favourite" image="heart" catalog="system" id="bre-vi-u1Q"/>
+                    <connections>
+                        <outlet property="noDataLable" destination="9nj-r6-J1x" id="I8B-O7-Mci"/>
+                        <outlet property="tableView" destination="rbx-er-67P" id="mEi-LU-AAh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ZT-kM-Rif" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730.43478260869574" y="637.5"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="ftk-EU-E6q">
+            <objects>
+                <viewController id="JZr-L0-Qzg" customClass="GMapViewController" customModule="GMapWithMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5my-l6-Fug">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zvB-uG-3wL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="V2d-c4-0uF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mni-Lb-2Hu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="197"/>
+        </scene>
+        <!--Git Repo-->
+        <scene sceneID="Io4-eJ-VeN">
+            <objects>
+                <viewController id="Lq1-ub-Avb" customClass="ListViewController" customModule="GMapWithMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nc4-uF-DI5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Ys-Hz-9js">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="77" id="P3d-Ew-zHf" customClass="ListTableViewCell" customModule="GMapWithMarker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P3d-Ew-zHf" id="r75-3B-vJT">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROx-R9-zxH">
+                                                    <rect key="frame" x="189.5" y="30" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ROx-R9-zxH" firstAttribute="centerX" secondItem="r75-3B-vJT" secondAttribute="centerX" id="dLK-aL-2m8"/>
+                                                <constraint firstItem="ROx-R9-zxH" firstAttribute="centerY" secondItem="r75-3B-vJT" secondAttribute="centerY" id="frh-Wu-ruw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLable" destination="ROx-R9-zxH" id="D29-eU-1GA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lq1-ub-Avb" id="BKQ-HB-ZHn"/>
+                                    <outlet property="delegate" destination="Lq1-ub-Avb" id="3Ke-v3-kar"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DSS-rB-DHf" firstAttribute="bottom" secondItem="6Ys-Hz-9js" secondAttribute="bottom" id="Ghp-wY-Dcn"/>
+                            <constraint firstItem="6Ys-Hz-9js" firstAttribute="top" secondItem="DSS-rB-DHf" secondAttribute="top" id="QO3-5B-q8v"/>
+                            <constraint firstItem="DSS-rB-DHf" firstAttribute="trailing" secondItem="6Ys-Hz-9js" secondAttribute="trailing" id="TCF-ct-reP"/>
+                            <constraint firstItem="6Ys-Hz-9js" firstAttribute="leading" secondItem="DSS-rB-DHf" secondAttribute="leading" id="q3B-CQ-Sq4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DSS-rB-DHf"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Git Repo" image="github" id="Bju-3r-wef"/>
+                    <connections>
+                        <outlet property="tableView" destination="6Ys-Hz-9js" id="NLH-OH-akY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWx-jq-eBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="188.40579710144928" y="-450"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="flD-h2-VB7">
+            <objects>
+                <viewController id="q0I-bD-p1u" customClass="LoginViewController" customModule="GMapWithMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5nT-Np-w5x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hkL-P9-moi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="008-YU-HMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1572" y="-130"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UWb-i3-GXR">
+            <objects>
+                <tabBarController id="UTP-p0-PI3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V9j-8Y-5ch">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Lq1-ub-Avb" kind="relationship" relationship="viewControllers" id="IZH-Mm-eTW"/>
+                        <segue destination="JZr-L0-Qzg" kind="relationship" relationship="viewControllers" id="ujX-GS-dqe"/>
+                        <segue destination="Ctr-cT-duu" kind="relationship" relationship="viewControllers" id="RiM-cu-lF8"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMs-hf-CIu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-730" y="-127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="github" width="24" height="24"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
